@@ -1,12 +1,12 @@
 'use client'
 
-import { Technologies } from '@/types'
+import { TechnologiesBlock } from '@/types'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 
 interface ITechLinksProps {
-	technologies: Technologies
+	technologies: TechnologiesBlock
 }
 
 export default function TechLinks({ technologies }: ITechLinksProps) {
