@@ -138,12 +138,12 @@ const ChatBot = () => {
 										{messages[messages.length - 1]?.content}
 									</p>
 									<form
-										onSubmit={e => {
-											e.preventDefault()
-											const input = e.target.elements.message.value
-											handleChatMessage(input)
-											e.target.reset()
-										}}
+									// onSubmit={e => {
+									// 	e.preventDefault()
+									// 	const input = e.target.elements.message.value
+									// 	handleChatMessage(input)
+									// 	e.target.reset()
+									// }}
 									>
 										<Input name='message' placeholder='Type a message...' />
 										<Button type='submit' className='w-full mt-2'>
