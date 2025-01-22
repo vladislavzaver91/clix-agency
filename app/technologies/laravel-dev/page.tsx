@@ -2,10 +2,10 @@
 
 // page without tech
 
-import HowWeWorkSection from '@/components/blockchain-dev/HowWeWorkSection'
 import CaseStudiesSection from '@/components/services/CaseStudiesSection'
 import ContactUsBottomSection from '@/components/services/ContactUsBottomSection'
 import ContactUsSection from '@/components/services/ContactUsSection'
+import HowWeWorkSection from '@/components/services/reused-components/HowWeWorkSection'
 import TestimonialsSection from '@/components/services/TestimonialsSection'
 import WhyWe from '@/components/services/WhyWeSection'
 import BenefitsSection from '@/components/technologies/laravel-dev/BenefitsSection'
