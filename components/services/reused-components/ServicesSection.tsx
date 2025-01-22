@@ -1,73 +1,16 @@
 'use client'
 
+import { Services } from '@/types'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 import { useState } from 'react'
 
-const services = [
-	{
-		title: 'Mobile App Development',
-		href: '/services/mob-app',
-		description:
-			'We provide custom mobile app development solutions designed to elevate your business and reach your target audience more effectively.',
-	},
-	{
-		title: 'Web Development',
-		href: '/services/web-dev',
-		description:
-			'Our expert team delivers scalable and customized web solutions that will take your business to the next level in the digital world.',
-	},
-	{
-		title: 'Marketplace Development',
-		href: '/services/marketplace',
-		description:
-			'We build flexible, secure, and scalable marketplace platforms, helping you grow your audience and enhance your revenue.',
-	},
-	{
-		title: 'e-Commerce Development',
-		href: '/services/ecommerce-dev',
-		description:
-			'Transform your eCommerce strategy with personalized solutions that improve the customer journey and boost your sales potential.',
-	},
-	{
-		title: 'Blockchain Development',
-		href: '/services/blockchain-dev',
-		description:
-			'Leverage our blockchain expertise to deliver secure, decentralized solutions that revolutionize your business operations.',
-	},
-	{
-		title: 'Cryptocurrency Development',
-		href: '/services/cryptocurrency',
-		description:
-			'Our cryptocurrency development services will help you create secure, innovative platforms tailored to your business needs, ensuring growth and scalability.',
-	},
-	{
-		title: 'SaaS Development',
-		href: '/services/saas',
-		description:
-			'Let’s work together to build cutting-edge cloud-based solutions that accelerate your business goals with high efficiency and cost-effectiveness.',
-	},
-	{
-		title: 'Software Development for Startups',
-		href: '/services/software-dev-for-startups',
-		description:
-			'We help startups create their MVP or full-scale software products, laying a strong foundation for growth, investment, and market success.',
-	},
-	{
-		title: 'UX/UI Design',
-		href: '/services/web-design',
-		description:
-			'Our UX/UI designers will create intuitive, visually appealing designs that ensure a smooth user experience and drive engagement.',
-	},
-	{
-		title: 'Fintech Software Development',
-		href: '/services/fintech-software-dev',
-		description:
-			'We provide end-to-end fintech software development services that address the challenges of the financial industry while improving efficiency and security.',
-	},
-]
+interface IServicesProps {
+	services: Services
+}
 
-export default function OutsourcingServices() {
+export default function ServicesSection({ services }: IServicesProps) {
 	const [openIndex, setOpenIndex] = useState<number | null>(null)
 
 	const toggleDescription = (index: number) => {
@@ -116,6 +59,14 @@ export default function OutsourcingServices() {
 										<p className='text-muted-foreground mb-3'>
 											{service.description}
 										</p>
+										{service.href && (
+											<Link
+												href={service.href}
+												className='flex items-center gap-2 text-sm font-medium transition-colors text-muted-foreground hover:text-primary'
+											>
+												Read More <ExternalLink className='ml-2 h-4 w-4' />
+											</Link>
+										)}
 									</motion.div>
 								)}
 							</AnimatePresence>

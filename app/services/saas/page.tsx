@@ -1,8 +1,5 @@
 'use client'
 
-// page without tech
-
-import HowWeWorkSection from '@/components/blockchain-dev/HowWeWorkSection'
 import BenefitsSection from '@/components/saas/BenefitsSection'
 import FAQSection from '@/components/saas/FAQSection'
 import SaaSDevServices from '@/components/saas/SaaSDevServices'
@@ -10,6 +7,7 @@ import StepsSection from '@/components/saas/StepsSection'
 import CaseStudiesSection from '@/components/services/CaseStudiesSection'
 import ContactUsBottomSection from '@/components/services/ContactUsBottomSection'
 import ContactUsSection from '@/components/services/ContactUsSection'
+import HowWeWorkSection from '@/components/services/reused-components/HowWeWorkSection'
 import TestimonialsSection from '@/components/services/TestimonialsSection'
 import WhyWe from '@/components/services/WhyWeSection'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'

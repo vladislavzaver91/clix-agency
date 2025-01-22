@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
 				</motion.p>
 			</motion.div>
 
-			<div className='relative max-[419px]:max-w-[240px] max-sm:max-w-sm max-xl:max-w-3xl w-full mx-auto'>
+			<div className='relative max-w-[240px] sm:max-w-sm xl:max-w-3xl w-full mx-auto'>
 				<Swiper
 					modules={[Navigation, Autoplay]}
 					spaceBetween={30}

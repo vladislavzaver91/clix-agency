@@ -1,7 +1,7 @@
 'use client'
 
 import AdditionalServicesSection from '@/components/services/AdditionalServicesSection'
-import BenefitsSection from '@/components/services/BenefitsSection'
+import BenefitsSection from '@/components/services/BenefitsHeadingSection'
 import BlogSection from '@/components/services/BlogsSection'
 import CaseStudiesSection from '@/components/services/CaseStudiesSection'
 import CollaborationApproachesSection from '@/components/services/CollaborationApproachesSection'

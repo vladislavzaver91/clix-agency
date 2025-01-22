@@ -1,12 +1,10 @@
 'use client'
 
-// page without tech icons
-
-import HowWeWorkSection from '@/components/blockchain-dev/HowWeWorkSection'
-import BenefitsSection from '@/components/services/BenefitsSection'
+import BenefitsSection from '@/components/services/BenefitsHeadingSection'
 import CaseStudiesSection from '@/components/services/CaseStudiesSection'
 import ContactUsBottomSection from '@/components/services/ContactUsBottomSection'
 import ContactUsSection from '@/components/services/ContactUsSection'
+import HowWeWorkSection from '@/components/services/reused-components/HowWeWorkSection'
 import TestimonialsSection from '@/components/services/TestimonialsSection'
 import WhyWe from '@/components/services/WhyWeSection'
 import FAQSection from '@/components/smart-contract/FAQSection'
