@@ -53,14 +53,14 @@ export async function POST(req: Request) {
 		const answer = completion.choices[0].message.content
 
 		// update history correspondence
-		await prisma.clients.update({
-			where: { id: userId },
-			data: {
-				correspondence: {
-					push: { user: question, bot: answer },
-				},
-			},
-		})
+		// await prisma.clients.update({
+		// 	where: { id: userId },
+		// 	data: {
+		// 		correspondence: {
+		// 			push: { user: question, bot: answer },
+		// 		},
+		// 	},
+		// })
 
 		return NextResponse.json({ answer })
 	} catch (error) {
