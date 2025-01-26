@@ -1,0 +1,14 @@
+[
+	{
+		"step": 0,
+		"message": "Hello, we provide web application development consultancy. Our team offers a full range of website development services: Frontend and Backend development, Web applications, Mobile-first design, Performance optimization, Custom solutions. For a consultation, please leave your details."
+	},
+	{
+		"step": 1,
+		"message": "Thank you for submitting your data! We're happy to help you with your development questions. You can leave a request in the Get Started section or message us on social media for more information."
+	},
+	{
+		"step": 2,
+		"message": "Спасибо! Есть еще вопросы?"
+	}
+]
