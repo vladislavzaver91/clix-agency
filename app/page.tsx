@@ -3,7 +3,7 @@
 import AboutSection from '@/components/home/AboutSection'
 import HeroSection from '@/components/home/HeroSection'
 import ServicesSection from '@/components/home/ServicesSection'
-import TechStack from '@/components/home/TechStack'
+// import TechStack from '@/components/home/TechStack'
 
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 
@@ -14,9 +14,9 @@ export default function Home() {
 			<RevealOnScroll>
 				<ServicesSection />
 			</RevealOnScroll>
-			<RevealOnScroll>
+			{/* <RevealOnScroll>
 				<TechStack />
-			</RevealOnScroll>
+			</RevealOnScroll> */}
 			<RevealOnScroll>
 				<AboutSection />
 			</RevealOnScroll>

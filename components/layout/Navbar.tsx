@@ -7,7 +7,13 @@ import useTechnologiesSubmenu, {
 	technologiesSubmenu,
 } from '@/hooks/use-technologies-submenu'
 import { motion } from 'framer-motion'
-import { ChevronDown, Code2, ExternalLink, Menu } from 'lucide-react'
+import {
+	ArrowRight,
+	ChevronDown,
+	Code2,
+	ExternalLink,
+	Menu,
+} from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -51,7 +57,7 @@ export default function Navbar() {
 				</Link>
 
 				{/* Desktop Navigation */}
-				<div className='hidden md:flex items-baseline space-x-8 ml-12'>
+				<div className='hidden md:flex items-baseline space-x-8 mx-8'>
 					{navItems.map(item => (
 						<div key={item.href} className='relative'>
 							{item.hasSubmenu ? (
@@ -200,6 +206,14 @@ export default function Navbar() {
 					))}
 				</div>
 
+				<div className='max-[767px]:hidden ml-auto'>
+					<Button asChild size='sm'>
+						<Link href='/get-started'>
+							Get Started <ArrowRight size={16} className='ml-2' />
+						</Link>
+					</Button>
+				</div>
+
 				{/* Mobile Menu Button */}
 				<Button
 					variant='ghost'
@@ -332,6 +346,14 @@ export default function Navbar() {
 								)}
 							</div>
 						))}
+
+						<div className='md:hidden pl-4'>
+							<Button asChild size='sm' className='mt-8'>
+								<Link href='/get-started'>
+									Get Started <ArrowRight size={16} className='ml-2' />
+								</Link>
+							</Button>
+						</div>
 					</div>
 				</div>
 			)}
