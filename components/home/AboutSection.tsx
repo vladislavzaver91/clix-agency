@@ -22,7 +22,7 @@ export default function AboutSection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true, amount: 0.2 }}
 					transition={{ duration: 0.6 }}
-					className='grid md:grid-cols-2 gap-12 items-center'
+					className='grid md:grid-cols-2 gap-12 max-w-5xl mx-auto items-center'
 				>
 					<div>
 						<motion.h2

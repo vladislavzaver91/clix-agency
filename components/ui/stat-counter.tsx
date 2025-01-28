@@ -10,8 +10,18 @@ export default function StatCounter({
 	const [currValue, setCurrValue] = useState(0)
 
 	useEffect(() => {
-		currValue !== value && setTimeout(setCurrValue, time, currValue + 1)
-	}, [currValue, time, value])
+		let interval: NodeJS.Timeout
+
+		if (currValue < value) {
+			interval = setTimeout(() => setCurrValue(currValue + 1), time)
+		}
+
+		return () => clearTimeout(interval)
+	}, [currValue, value, time])
+
+	useEffect(() => {
+		setCurrValue(0)
+	}, [value])
 
 	return (
 		<div>

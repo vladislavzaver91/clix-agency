@@ -1,9 +1,3 @@
-export type TechnologiesBlock = {
-	name: string
-	href: string
-	icon: string
-}[]
-
 export type Services = {
 	title: string
 	href?: string

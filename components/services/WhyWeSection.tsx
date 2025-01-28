@@ -3,6 +3,7 @@
 import { ExternalLink } from 'lucide-react'
 import { motion } from 'motion/react'
 import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 import { Button } from '../ui/button'
 import StatCounter from '../ui/stat-counter'
 
@@ -55,8 +56,26 @@ const stats = [
 ]
 
 export default function WhyWe() {
+	const [isVisible, setIsVisible] = useState(false)
+	const sectionRef = useRef<HTMLDivElement | null>(null)
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => setIsVisible(entry.isIntersecting),
+			{ threshold: 0.5 }
+		)
+
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current)
+		}
+
+		return () => {
+			if (sectionRef.current) observer.unobserve(sectionRef.current)
+		}
+	}, [])
+
 	return (
-		<section className='relative py-16 px-6 md:px-12 lg:px-20'>
+		<section ref={sectionRef} className='relative py-16 px-6 md:px-12 lg:px-20'>
 			{/* absolute elements */}
 			<div className='absolute inset-0 pointer-events-none'>
 				<motion.div
@@ -97,7 +116,7 @@ export default function WhyWe() {
 									className='text-4xl font-extrabold text-transparent bg-gradient-to-r from-[#0e62e4] via-[#7fb3ff] to-[#0e62e4] bg-[length:200%_auto] bg-clip-text animate-gradient'
 									animate={{ opacity: 1 }}
 								>
-									<StatCounter {...counter} />
+									{isVisible && <StatCounter {...counter} />}
 								</motion.div>
 							))}
 							<p className='text-lg text-muted-foreground'>{stat.title}</p>

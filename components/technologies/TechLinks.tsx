@@ -1,12 +1,11 @@
 'use client'
 
-import { TechnologiesBlock } from '@/types'
+import { TechnologiesIcons } from '@/types'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
 
 interface ITechLinksProps {
-	technologies: TechnologiesBlock
+	technologies: TechnologiesIcons
 }
 
 export default function TechLinks({ technologies }: ITechLinksProps) {
@@ -28,22 +27,18 @@ export default function TechLinks({ technologies }: ITechLinksProps) {
 						visible: { opacity: 1, y: 0 },
 					}}
 					transition={{ duration: 0.6, ease: 'easeOut' }}
+					className='p-6 h-full flex flex-col items-center justify-between group hover:shadow-lg transition-shadow bg-white dark:bg-gray-900 border rounded-lg'
 				>
-					<Link
-						href={tech.href}
-						className='p-6 h-full flex flex-col items-center justify-between group hover:shadow-lg transition-shadow bg-white dark:bg-gray-900 border rounded-lg'
-					>
-						<div className='relative'>
-							<Image
-								src={tech.icon}
-								alt={tech.name}
-								width={48}
-								height={48}
-								className='mb-4 transition duration-300 filter grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 min-w-[48px] min-h-[48px]'
-							/>
-						</div>
-						<span className='font-medium text-center'>{tech.name}</span>
-					</Link>
+					<div className='relative'>
+						<Image
+							src={tech.icon}
+							alt={tech.name}
+							width={48}
+							height={48}
+							className='mb-4 transition duration-300 filter grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 min-w-[48px] min-h-[48px]'
+						/>
+					</div>
+					<span className='font-medium text-center'>{tech.name}</span>
 				</motion.div>
 			))}
 		</motion.div>
