@@ -213,8 +213,8 @@ export default function Navbar() {
 
 			{/* Mobile Navigation */}
 			{isMobileMenuOpen && (
-				<div className='md:hidden border-t bg-background'>
-					<div className='container py-4 space-y-4'>
+				<div className='md:hidden fixed w-full h-screen border-t bg-background'>
+					<div className='container overflow-y-auto h-screen py-4 space-y-4'>
 						{navItems.map(item => (
 							<div key={item.href} className='relative'>
 								{item.href ? (
