@@ -15,18 +15,23 @@ datasource db {
 
 enum ClientStatus {
   standard // Стандартный клиент
-  poor     // Клиент с низким рейтингом
-  rich     // Клиент с высоким рейтингом
+  poor // Клиент с низким рейтингом
+  rich // Клиент с высоким рейтингом
 }
 
+enum OrderStatus {
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
 
 model project {
-  id Int @id @default(autoincrement())
+  id          Int    @id @default(autoincrement())
   projectType String
-  name String
-  email String
-  phone String
-  budget String
+  name        String
+  email       String
+  phone       String
+  budget      String
   description String
 }
 
@@ -40,16 +45,66 @@ model admins {
 }
 
 model clients {
-  id                    Int         @id @default(autoincrement())
-  name            String      @db.VarChar(50)
-  email                 String      @db.VarChar(20)
-  phone_1               String      @db.VarChar(20)
-  status               ClientStatus @default(standard)
-  project_type         String?      @db.VarChar(50)   // Тип проекта
-  budget               String?      @db.VarChar(20)   // Бюджет
-  message              String?      @db.Text          // Сообщение клиента
-  phone_2               String?     @db.VarChar(20)
-  additional_social_network String?  @db.VarChar(50) // Доп. социальная сеть (может быть пустым)
-  correspondence   String?     @db.Text    
-  created_at          DateTime? @default(now()) @db.Timestamp(6)
+  id                        Int          @id @default(autoincrement())
+  name                      String       @db.VarChar(50)
+  email                     String       @db.VarChar(20)
+  phone_1                   String       @db.VarChar(20)
+  status                    ClientStatus @default(standard)
+  project_type              String?      @db.VarChar(50) // Тип проекта
+  budget                    String?      @db.VarChar(20) // Бюджет
+  message                   String?      @db.Text // Сообщение клиента
+  phone_2                   String?      @db.VarChar(20)
+  additional_social_network String?      @db.VarChar(50) // Доп. социальная сеть (может быть пустым)
+  correspondence            String?      @db.Text
+  created_at                DateTime?    @default(now()) @db.Timestamp(6)
+  socialMedia               String?      @db.VarChar(100) // Добавляем поле
+
+  orders Order[]
+}
+
+enum specialityEnum {
+  Frontend
+  Seo
+  FullStack
+  Backend
+  Designer
+  Web3
+  Devops
+}
+
+model workers {
+  id          Int            @id @default(autoincrement())
+  name        String         @db.VarChar(50)
+  salary      String         @db.VarChar(50)
+  currency    String         @default("USD")
+  speciality  specialityEnum @default(FullStack)
+  documents   String[]       @db.VarChar(1000)
+  description String?        @db.VarChar(50)
+  contract    String?        @db.VarChar(50)
+  phone_1     String?        @db.VarChar(50)
+  phone_2     String?        @db.VarChar(50)
+  email       String?        @db.VarChar(50)
+  created_at  DateTime?      @default(now()) @db.Timestamp(6)
+
+  orders Order[]
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  client      clients     @relation(fields: [clientId], references: [id])
+  clientId    Int
+  status      OrderStatus @default(ACTIVE)
+  amount      Float
+  description String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  workers     workers?    @relation(fields: [workersId], references: [id])
+  workersId   Int?
+}
+
+model ExchangeRate {
+  id        String   @id @default(cuid())
+  currency  String   @unique
+  rate      Float
+  updatedAt DateTime @updatedAt
 }
