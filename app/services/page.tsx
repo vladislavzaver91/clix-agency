@@ -11,11 +11,18 @@ import CryptoSection from '@/components/services/CryptoSection'
 import HeadingServicesSection from '@/components/services/HeadingServicesSection'
 import IndustryExpertiseSection from '@/components/services/IndustryExpertiseSection'
 import StepsSection from '@/components/services/StepsSection'
-import TechStackSection from '@/components/services/TechStackSection'
 import TestimonialsSection from '@/components/services/TestimonialsSection'
 import WhyWeSection from '@/components/services/WhyWeSection'
 import { RevealOnScroll } from '@/components/ui/reveal-on-scroll'
 import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
+
+const TechStackSection = dynamic(
+	() => import('@/components/services/TechStackSection'),
+	{
+		ssr: false,
+	}
+)
 
 export default function ServicesPage() {
 	return (
