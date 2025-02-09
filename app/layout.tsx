@@ -1,4 +1,3 @@
-import ChatBot from '@/components/chat-widget/chat-widget-openai'
 import { BackgroundWrapper } from '@/components/ui/background-wrapper'
 import { Toaster } from '@/components/ui/toaster'
 import type { Metadata } from 'next'
@@ -27,7 +26,6 @@ export default function RootLayout({
 				<BackgroundWrapper />
 				<ClientLayout>{children}</ClientLayout> {/* Используем ClientLayout */}
 				{/* <ChatWidget /> */}
-				<ChatBot />
 				<Toaster />
 			</body>
 		</html>

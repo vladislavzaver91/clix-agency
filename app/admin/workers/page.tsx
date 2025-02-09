@@ -196,11 +196,7 @@ export default function WorkersPage() {
 
                 <Label>Documents</Label>
                 {/* Файловый инпут */}
-                <FileInput
-                  {...register("documents")}
-                  multiple
-                  className="border rounded-md p-2 shadow-sm"
-                />
+                <FileInput {...register("documents")} multiple />
 
                 {/* Кнопка отправки */}
                 <Button
