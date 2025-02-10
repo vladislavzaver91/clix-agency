@@ -185,6 +185,7 @@ export default function GetStartedPage() {
                   <SelectValue placeholder="Select budget range" />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="1-5k">$1,000 - $5,000</SelectItem>
                   <SelectItem value="5-10k">$5,000 - $10,000</SelectItem>
                   <SelectItem value="10-25k">$10,000 - $25,000</SelectItem>
                   <SelectItem value="25-50k">$25,000 - $50,000</SelectItem>
