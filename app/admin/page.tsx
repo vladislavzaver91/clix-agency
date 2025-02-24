@@ -18,7 +18,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select'
-import { BarChart, DollarSign, FileCheck, Settings, Users } from 'lucide-react'
+import { BarChart, DollarSign, FileCheck, Settings } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -182,7 +182,7 @@ export default function Dashboard() {
 						</div>
 					</Card>
 
-					<Link href='/admin/completed-orders'>
+					{/* <Link href='/admin/completed-orders'>
 						<Card className='p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow'>
 							<div className='flex items-center space-x-4'>
 								<div className='p-3 bg-orange-100 rounded-full'>
@@ -196,7 +196,7 @@ export default function Dashboard() {
 								</div>
 							</div>
 						</Card>
-					</Link>
+					</Link> */}
 				</div>
 
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
